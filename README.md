@@ -2,7 +2,7 @@
 
 A simple PyQT6 Based UI for managing stream overlays for tournaments. 
 
-Supports player tags and social links, sponsor tags, set count, round title, and commentator tags.
+Supports player tags and social links, sponsor tags, set count, round title and games, and commentator tags.
 
 ---
 
@@ -12,7 +12,7 @@ First, download TourneyOverlay [here](https://github.com/yhsanave/tourney-overla
 
 Save the executable in wherever you want the files to be and run it. It will create a folder called `TourneyOverlay` in the same directory. 
 
-Next, create a text element in your streaming software which reads from a file for each value you want to use and point them to the corresponding file (see below)
+Create a text element in your streaming software for each value you want to use and set it to read from the corresponding file (see below).
 
 ---
 
