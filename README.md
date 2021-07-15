@@ -1,6 +1,6 @@
 # Tourney Overlay
 
-A simple PyQT5 Based UI for managing stream overlays for tournaments. 
+A simple PyQT6 Based UI for managing stream overlays for tournaments. 
 
 Supports player tags and social links, sponsor tags, set count, round title, and commentator tags.
 
