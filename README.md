@@ -32,3 +32,7 @@ All paths are relative to the `TourneyOverlay` folder in the same directory as t
 | Player 2 Tag | Smoosh \| Yhsanave | `/Player 2/tag.txt` |
 | Player 2 Social | @Yhsanave | `/Player 2/social.txt` |
 | Player 2 Score | 0 | `/Player 2/score.txt` |
+
+---
+
+Found an issue or have a suggestion? DM me on discord @Yhsanave#2301, twitter [@Yhsanave](https://twitter.com/Yhsanave), or send me an email at [yhsanave@puff.rest](mailto:yhsanave@puff.rest)
