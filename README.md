@@ -35,4 +35,6 @@ All paths are relative to the `TourneyOverlay` folder in the same directory as t
 
 ---
 
-Found an issue or have a suggestion? DM me on discord @Yhsanave#2301, twitter [@Yhsanave](https://twitter.com/Yhsanave), or send me an email at [yhsanave@puff.rest](mailto:yhsanave@puff.rest)
+Found an issue or have a suggestion? 
+
+DM me on discord @Yhsanave#2301, on twitter [@Yhsanave](https://twitter.com/Yhsanave), or send me an email at [yhsanave@puff.rest](mailto:yhsanave@puff.rest)
