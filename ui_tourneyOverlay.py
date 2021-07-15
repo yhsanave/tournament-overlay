@@ -60,7 +60,7 @@ class Ui_mainWindow(object):
 
         self.setRoundInput = QLineEdit(self.mainWidget)
         self.setRoundInput.setObjectName(u"setRoundInput")
-        with open('./Output/Set/round.txt', 'r') as file:
+        with open('./TourneyOverlay/Set/round.txt', 'r') as file:
             self.setRoundInput.setText(file.read())
         self.setRoundInput.textChanged.connect(self.setRound)
 
@@ -74,7 +74,7 @@ class Ui_mainWindow(object):
 
         self.setGamesInput = QLineEdit(self.mainWidget)
         self.setGamesInput.setObjectName(u"setGamesInput")
-        with open('./Output/Set/games.txt', 'r') as file:
+        with open('./TourneyOverlay/Set/games.txt', 'r') as file:
             self.setGamesInput.setText(file.read())
         self.setGamesInput.textChanged.connect(self.setGames)
 
@@ -111,7 +111,7 @@ class Ui_mainWindow(object):
 
         self.commentary1Input = QLineEdit(self.mainWidget)
         self.commentary1Input.setObjectName(u"commentary1Input")
-        with open('./Output/Commentators/1.txt', 'r') as file:
+        with open('./TourneyOverlay/Commentators/1.txt', 'r') as file:
             self.commentary1Input.setText(file.read())
         self.commentary1Input.textChanged.connect(self.setCommentator1)
 
@@ -125,7 +125,7 @@ class Ui_mainWindow(object):
 
         self.commentary2Input = QLineEdit(self.mainWidget)
         self.commentary2Input.setObjectName(u"commentary2Input")
-        with open('./Output/Commentators/2.txt', 'r') as file:
+        with open('./TourneyOverlay/Commentators/2.txt', 'r') as file:
             self.commentary2Input.setText(file.read())
         self.commentary2Input.textChanged.connect(self.setCommentator2)
 
@@ -172,7 +172,7 @@ class Ui_mainWindow(object):
 
         self.p1TagInput = QLineEdit(self.mainWidget)
         self.p1TagInput.setObjectName(u"p1TagInput")
-        with open('./Output/Player 1/tag.txt', 'r') as file:
+        with open('./TourneyOverlay/Player 1/tag.txt', 'r') as file:
             tag = file.read()
             if ' | ' in tag:
                 self.p1TagInput.setText(tag.split(' | ')[1])
@@ -190,7 +190,7 @@ class Ui_mainWindow(object):
 
         self.p1SponsorInput = QLineEdit(self.mainWidget)
         self.p1SponsorInput.setObjectName(u"p1SponsorInput")
-        with open('./Output/Player 1/tag.txt', 'r') as file:
+        with open('./TourneyOverlay/Player 1/tag.txt', 'r') as file:
             tag = file.read()
             if ' | ' in tag:
                 self.p1SponsorInput.setText(tag.split(' | ')[0])
@@ -206,7 +206,7 @@ class Ui_mainWindow(object):
 
         self.p1SocialInput = QLineEdit(self.mainWidget)
         self.p1SocialInput.setObjectName(u"p1SocialInput")
-        with open('./Output/Player 1/social.txt', 'r') as file:
+        with open('./TourneyOverlay/Player 1/social.txt', 'r') as file:
             self.p1SocialInput.setText(file.read())
         self.p1SocialInput.textChanged.connect(self.setP1Social)
 
@@ -220,7 +220,7 @@ class Ui_mainWindow(object):
 
         self.p1ScoreInput = QSpinBox(self.mainWidget)
         self.p1ScoreInput.setObjectName(u"p1ScoreInput")
-        with open('./Output/Player 1/score.txt', 'r') as file:
+        with open('./TourneyOverlay/Player 1/score.txt', 'r') as file:
             self.p1ScoreInput.setValue(int(file.read()))
         self.p1ScoreInput.valueChanged.connect(self.setP1Score)
 
@@ -265,7 +265,7 @@ class Ui_mainWindow(object):
 
         self.p2TagInput = QLineEdit(self.mainWidget)
         self.p2TagInput.setObjectName(u"p2TagInput")
-        with open('./Output/Player 2/tag.txt', 'r') as file:
+        with open('./TourneyOverlay/Player 2/tag.txt', 'w+') as file:
             tag = file.read()
             if ' | ' in tag:
                 self.p2TagInput.setText(tag.split(' | ')[1])
@@ -283,7 +283,7 @@ class Ui_mainWindow(object):
 
         self.p2SponsorInput = QLineEdit(self.mainWidget)
         self.p2SponsorInput.setObjectName(u"p2SponsorInput")
-        with open('./Output/Player 2/tag.txt', 'r') as file:
+        with open('./TourneyOverlay/Player 2/tag.txt', 'w+') as file:
             tag = file.read()
             if ' | ' in tag:
                 self.p2SponsorInput.setText(tag.split(' | ')[0])
@@ -299,7 +299,7 @@ class Ui_mainWindow(object):
 
         self.p2SocialInput = QLineEdit(self.mainWidget)
         self.p2SocialInput.setObjectName(u"p2SocialInput")
-        with open('./Output/Player 2/social.txt', 'r') as file:
+        with open('./TourneyOverlay/Player 2/social.txt', 'r') as file:
             self.p2SocialInput.setText(file.read())
         self.p2SocialInput.textChanged.connect(self.setP2Social)
 
@@ -313,7 +313,7 @@ class Ui_mainWindow(object):
 
         self.p2ScoreInput = QSpinBox(self.mainWidget)
         self.p2ScoreInput.setObjectName(u"p2ScoreInput")
-        with open('./Output/Player 2/score.txt', 'r') as file:
+        with open('./TourneyOverlay/Player 2/score.txt', 'r') as file:
             self.p2ScoreInput.setValue(int(file.read()))
         self.p2ScoreInput.valueChanged.connect(self.setP2Score)
 
@@ -466,42 +466,42 @@ class Ui_mainWindow(object):
             file.write(value)
 
     def setRound(self):
-        self.saveValue('./Output/Set/round.txt', self.setRoundInput.text())
+        self.saveValue('./TourneyOverlay/Set/round.txt', self.setRoundInput.text())
 
     def setGames(self):
-        self.saveValue('./Output/Set/games.txt', self.setGamesInput.text())
+        self.saveValue('./TourneyOverlay/Set/games.txt', self.setGamesInput.text())
 
     def setP1Tag(self):
         tag = ''
         if self.p1SponsorInput.text():
             tag += self.p1SponsorInput.text() + ' | '
         tag += self.p1TagInput.text()
-        self.saveValue('./Output/Player 1/tag.txt', tag)
+        self.saveValue('./TourneyOverlay/Player 1/tag.txt', tag)
 
     def setP1Social(self):
-        self.saveValue('./Output/Player 1/social.txt', self.p1SocialInput.text())
+        self.saveValue('./TourneyOverlay/Player 1/social.txt', self.p1SocialInput.text())
 
     def setP1Score(self):
-        self.saveValue('./Output/Player 1/score.txt', str(self.p1ScoreInput.value()))
+        self.saveValue('./TourneyOverlay/Player 1/score.txt', str(self.p1ScoreInput.value()))
 
     def setP2Tag(self):
         tag = ''
         if self.p2SponsorInput.text():
             tag += self.p2SponsorInput.text() + ' | '
         tag += self.p2TagInput.text()
-        self.saveValue('./Output/Player 2/tag.txt', tag)
+        self.saveValue('./TourneyOverlay/Player 2/tag.txt', tag)
 
     def setP2Social(self):
-        self.saveValue('./Output/Player 2/social.txt', self.p2SocialInput.text())
+        self.saveValue('./TourneyOverlay/Player 2/social.txt', self.p2SocialInput.text())
 
     def setP2Score(self):
-        self.saveValue('./Output/Player 2/score.txt', str(self.p2ScoreInput.value()))
+        self.saveValue('./TourneyOverlay/Player 2/score.txt', str(self.p2ScoreInput.value()))
 
     def setCommentator1(self):
-        self.saveValue('./Output/Commentators/1.txt', self.commentary1Input.text())
+        self.saveValue('./TourneyOverlay/Commentators/1.txt', self.commentary1Input.text())
 
     def setCommentator2(self):
-        self.saveValue('./Output/Commentators/2.txt', self.commentary2Input.text())
+        self.saveValue('./TourneyOverlay/Commentators/2.txt', self.commentary2Input.text())
 
     def p1Win(self):
         self.p1ScoreInput.setValue(self.p1ScoreInput.value() + 1)
@@ -532,7 +532,29 @@ class Ui_mainWindow(object):
         self.commentary1Input.setText(self.commentary2Input.text())
         self.commentary2Input.setText(temp)
 
+def makeFiles():
+    import os
+    
+    dirs = ['./TourneyOverlay','./TourneyOverlay/Set','./TourneyOverlay/Commentators','./TourneyOverlay/Player 1','./TourneyOverlay/Player 2']
+    for dir in dirs:
+        if not os.path.exists(dir):
+            os.mkdir(dir)
+    
+    files = ['Set/round.txt','Set/games.txt','Commentators/1.txt','Commentators/2.txt','Player 1/tag.txt','Player 1/social.txt','Player 1/score.txt','Player 2/tag.txt','Player 2/social.txt','Player 2/score.txt']
+    for path in files:
+        if 'score' in path:
+            with open(f'./TourneyOverlay/{path}', 'w+') as file:
+                file.write('0')
+        else:
+            open(f'./TourneyOverlay/{path}', 'w+').close()
+
 if __name__ == "__main__":
+        try:
+            file = open('./TourneyOverlay/Set/round.txt')
+            file.close()
+        except FileNotFoundError:
+            makeFiles()
+
         import sys
         app = QApplication(sys.argv)
         mainWindow = QMainWindow()
